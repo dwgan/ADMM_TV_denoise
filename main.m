@@ -1,0 +1,13 @@
+x=double(imread('house.bmp'));
+x_n=x+10*randn(size(x));
+x_r=ADMM_TVdenoise(x_n,25,10,100);
+figure;
+subplot(131);
+imshow(uint8(x));
+title('原始图像');
+subplot(132);
+imshow(uint8(x_n));
+title('加噪图像');
+subplot(133);
+imshow(uint8(x_r));
+title('去噪图像');
